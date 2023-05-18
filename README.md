@@ -51,3 +51,25 @@ terraform state push
     - Make sure you have made changes to your local state that you want to push to the remote backend. For example, you might have created or modified resources using Terraform.
     - Run the `terraform state push` command to push the local state to the remote backend. This command will upload your local state file to the configured remote backend.
 
+#
+- Create new workspace:
+```
+terraform workspace new < prod >
+```
+#
+- Displays workspaces
+```
+terraform workspace show
+```
+#
+- To switch to another workspace
+```
+terraform workspace select < new_of_another_workspace >
+```
+#
+- Plan & Apply Workspace
+```
+terraform plan --var-file < prod.tfvars >
+terraform apply --var-file < prod.tfvars >
+```
+- If the name of file "tarraform.tfvars" you can use normal command `terraform plan`
