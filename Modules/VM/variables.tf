@@ -46,7 +46,7 @@ variable "vpc_id" {
   type = string
 }
 
-variable "public_key" {
+variable "private_key" {
   type = string
   default = "privatekey"
 }

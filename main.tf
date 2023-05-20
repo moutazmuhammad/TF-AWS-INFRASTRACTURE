@@ -22,14 +22,19 @@ module "vm" {
   lb_subnets            = [module.network.subnet_public_one_id, module.network.subnet_public_two_id]
 }
 
-module "database" {
-  source                = "./Modules/Databases"
+module "redis" {
+  source                = "./Modules/Redis"
   redis_node_type       = var.redis_node_type
   redis_num_cache_nodes = var.redis_num_cache_nodes
   redis_subnet_ids      = [module.network.subnet_private_two_id]
   vpc_id                = module.network.vpc_id
-  rds_engine            = var.rds_engine
-  rds_username          = var.rds_username
-  rds_password          = var.rds_password
-  rds_subnet_gp_name    = module.network.private_subnet_gp_name
+}
+
+module "rds" {
+  source             = "./Modules/RDS"
+  rds_engine         = var.rds_engine
+  rds_username       = var.rds_username
+  rds_password       = var.rds_password
+  rds_subnet_gp_name = module.network.private_subnet_gp_name
+  vpc_id             = module.network.vpc_id
 }
