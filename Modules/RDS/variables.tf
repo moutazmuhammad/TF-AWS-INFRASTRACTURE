@@ -1,5 +1,5 @@
 variable "rds_allocated_storage" {
-  type = number
+  type    = number
   default = 10
 }
 
@@ -8,18 +8,18 @@ variable "rds_engine" {
 }
 
 variable "rds_engine_version" {
-  type = string
+  type    = string
   default = "5.7"
 }
 
 
 variable "rds_instance_class" {
-  type = string
+  type    = string
   default = "db.t2.micro"
 }
 
 variable "rds_db_name" {
-  type = string
+  type    = string
   default = "sqlTF"
 }
 
@@ -32,7 +32,7 @@ variable "rds_password" {
 }
 
 variable "rds_parameter_group_name" {
-  type = string
+  type    = string
   default = "default.mysql5.7"
 }
 
@@ -41,12 +41,12 @@ variable "rds_subnet_gp_name" {
 }
 
 variable "rds_skip_final_snapshot" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "rds_backup_retention_period" {
-  type = number
+  type    = number
   default = 0
 }
 

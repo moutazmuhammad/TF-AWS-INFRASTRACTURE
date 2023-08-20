@@ -1,6 +1,6 @@
 # target group
 resource "aws_lb_target_group" "tg" {
-  name     = var.tg_name 
+  name     = var.tg_name
   port     = var.lb_port
   protocol = var.lb_protocol
   vpc_id   = var.vpc_id
@@ -15,9 +15,9 @@ resource "aws_lb_target_group_attachment" "tg_attach" {
 
 # Craete load balancer
 resource "aws_lb" "lb" {
-  name               = var.lb_name 
-  internal           = var.lb_internal_value 
-  load_balancer_type = var.lb_type 
+  name               = var.lb_name
+  internal           = var.lb_internal_value
+  load_balancer_type = var.lb_type
   security_groups    = [aws_security_group.lb_sg.id]
   subnets            = var.lb_subnets
 }

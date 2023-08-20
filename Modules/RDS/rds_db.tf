@@ -1,6 +1,6 @@
 resource "aws_db_instance" "rds" {
   # Allocating the storage for database instance.
-  allocated_storage = var.rds_allocated_storage 
+  allocated_storage = var.rds_allocated_storage
   # Declaring the database engine and engine_version
   engine         = var.rds_engine
   engine_version = var.rds_engine_version
@@ -17,8 +17,8 @@ resource "aws_db_instance" "rds" {
   db_subnet_group_name   = var.rds_subnet_gp_name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   # to delete database when destroy
-  skip_final_snapshot     = var.rds_skip_final_snapshot 
-  backup_retention_period = var.rds_backup_retention_period 
+  skip_final_snapshot     = var.rds_skip_final_snapshot
+  backup_retention_period = var.rds_backup_retention_period
 }
 
 

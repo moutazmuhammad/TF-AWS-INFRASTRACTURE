@@ -1,45 +1,45 @@
 variable "public_instance_ami" {
- type = string 
+  type = string
 }
 
 variable "public_instance_type" {
- type = string 
+  type = string
 }
 
 variable "public_ip_addres" {
- type = bool 
- default = true
+  type    = bool
+  default = true
 }
 
 variable "public_subnet_id" {
- type = string 
+  type = string
 }
 
 variable "public_instance_name" {
- type = string 
- default = "public-instance"
+  type    = string
+  default = "public-instance"
 }
 
 variable "private_instance_ami" {
- type = string 
+  type = string
 }
 
 variable "private_instance_type" {
- type = string 
+  type = string
 }
 
 variable "private_public_ip_addres" {
- type = bool 
- default = false
+  type    = bool
+  default = false
 }
 
 variable "private_subnet_id" {
- type = string 
+  type = string
 }
 
 variable "private_instance_name" {
- type = string 
- default = "private-instance"
+  type    = string
+  default = "private-instance"
 }
 
 variable "vpc_id" {
@@ -47,40 +47,40 @@ variable "vpc_id" {
 }
 
 variable "private_key" {
-  type = string
+  type    = string
   default = "privatekey"
 }
 
 variable "tg_name" {
-  type = string
+  type    = string
   default = "tg-tf"
 }
 
 variable "lb_name" {
-  type = string
+  type    = string
   default = "lb-tf"
 }
 
 variable "lb_port" {
-  type = number
+  type    = number
   default = 80
 }
 
 variable "lb_protocol" {
-  type = string
+  type    = string
   default = "HTTP"
 }
 
 variable "lb_internal_value" {
-  type = bool
+  type    = bool
   default = false
 }
 
 variable "lb_type" {
-  type = string
+  type    = string
   default = "application"
 }
 
 variable "lb_subnets" {
-  type = list
+  type = list(any)
 }

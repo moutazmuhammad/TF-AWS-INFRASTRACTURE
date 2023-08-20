@@ -1,47 +1,47 @@
 variable "vpc_name" {
-    type = string
+  type = string
 }
 
 variable "vpc_cidr_block" {
-    type = string
+  type = string
 }
 
 variable "vpc_enable_dns_hostnames" {
-    type = bool
+  type = bool
 }
 
 variable "vpc_enable_dns_support" {
-    type = bool
+  type = bool
 }
 
 variable "igw_name" {
-    type = string
-    default = "main-igw"
+  type    = string
+  default = "main-igw"
 }
 
 variable "nat_name" {
-  type = string
+  type    = string
   default = "ngw"
 }
 
 variable "public_route_cidr_block" {
-  type = string
-default = "0.0.0.0/0"
+  type    = string
+  default = "0.0.0.0/0"
 }
 
 variable "public_route_name" {
-  type = string
-    default = "public-route"
+  type    = string
+  default = "public-route"
 }
 
 variable "private_route_cidr_block" {
-  type = string
-default = "0.0.0.0/0"
+  type    = string
+  default = "0.0.0.0/0"
 }
 
 variable "private_route_name" {
-  type = string
-    default = "private-route"
+  type    = string
+  default = "private-route"
 }
 
 variable "az_subnet_pb_one" {
