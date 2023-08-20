@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('terraform init'){
           steps{
-             withAWS(credentials: 'awsCredential') {
+             withAWS(credentials: 'aws_credential') {
                 sh 'terraform -chdir=./terraform init'
                 }
           }
@@ -16,7 +16,7 @@ pipeline {
 
         stage('terraform plan'){
           steps{
-             withAWS(credentials: 'awsCredential') {
+             withAWS(credentials: 'aws_credential') {
                sh 'terraform -chdir=./terraform plan'
              }
           }
@@ -24,7 +24,7 @@ pipeline {
 
         stage('terraform build and using outputs'){
           steps{
-             withAWS(credentials: 'awsCredential') {
+             withAWS(credentials: 'aws_credential') {
                 sh 'terraform -chdir=./terraform apply --auto-approve'
                 }
           }
