@@ -22,7 +22,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 withAWS(credentials: 'aws_credential') {
-                    sh "terraform plan -var rds_password=${env.RDS_PASSWORD} -var rds_username=${env.RDS_USERNAME}"
+                    sh "terraform plan -var rds_password=$RDS_PASSWORD -var rds_username=$RDS_USERNAME"
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 withAWS(credentials: 'aws_credential') {
-                    sh "terraform apply -var rds_password=${env.RDS_PASSWORD} -var rds_username=${env.RDS_USERNAME} --auto-approve"
+                    sh "terraform apply -var rds_password=$RDS_PASSWORD -var rds_username=$RDS_USERNAME --auto-approve"
                 }
             }
         }
