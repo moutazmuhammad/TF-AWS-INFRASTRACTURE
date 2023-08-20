@@ -1,5 +1,5 @@
 pipeline {
-    agent "slave-jenkins"
+    agent any
 
     tools {
        terraform 'terraform'
