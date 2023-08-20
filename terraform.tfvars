@@ -14,5 +14,5 @@ az_subnet_pr_two         = "us-east-1b"
 redis_node_type          = "cache.t2.micro"
 redis_num_cache_nodes    = 1
 rds_engine               = "mysql"
-rds_username             = "admin"
-rds_password             = "passw0rd"
+# rds_username             = "admin"
+# rds_password             = "passw0rd"
