@@ -27,6 +27,12 @@ pipeline {
             }
         }
 
+        stage('Manual Approval') {
+            steps {
+                input "Approve Terraform Changes?"
+            }
+        }
+
         stage('Terraform Apply') {
             steps {
                 withAWS(credentials: 'aws_credential') {
