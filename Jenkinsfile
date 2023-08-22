@@ -11,6 +11,13 @@ pipeline {
     }
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Terraform Initialization') {
             steps {
                 withAWS(credentials: 'aws_credential') {
